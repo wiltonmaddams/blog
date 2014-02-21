@@ -1,0 +1,13 @@
+<h2>Create a New Post:</h2>
+
+
+<form id="new_post_form" method="POST" action="/confirm_post">
+  Title: <input type="text" name="post[title]">
+  <br>
+  <br>
+  Post: <textarea rows="15" cols="50" name="post[body]" form="new_post_form"></textarea>
+  <br>
+  <br>
+  Tags: <input type="text" name="tags">
+  <br><input type="submit" value="Post it!">
+</form>

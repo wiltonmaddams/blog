@@ -1,0 +1,15 @@
+<h2>Edit Your Post:</h2>
+
+
+<form id="edit_post_form" method="POST" action="/update_post">
+  Title: <input type="text" name="title" value="<%=@post.title%>">
+  <br>
+  <br>
+  Post: <textarea rows="15" cols="50" name="body" form="edit_post_form"><%=@post.body%></textarea>
+  <br>
+  <br>
+  <input type="hidden" name="id" value="<%=@post.id%>">
+  Tags: <input type="text" name="tags" value="<%=@post.tags.map(&:name).join(", ")%>">
+  <br><input type="submit" value="Post it!">
+  <br><h4><a href='/'>Home</a></h4>
+</form>

@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>Welcome to Blog One!</h1>
+
+<div class = "posts">
+  <% if Post.all.any? %>
+    <% Post.all.each do |post| %>
+      <h2><a href="/view_post/<%=post.id%>"><%= post.title %></a></h2>
+      <h4><%= post.body %></h4>
+    <%end%>
+  <% else %>
+    <h3>Looks like this blog doesn't have any posts yet! You should make a new one.</h3>
+  <%end%>
+</div>
+
+
+ <h4><a href="/new_post" method="GET">Create a New Post</a></h4>
+ <h4>View Posts By Tag:</h4>
+
+ <form id="view_by_tag" method="get" action="/view_by_tag">
+  <select name="tag_name" form="view_by_tag">
+    <%Tag.all.each do |tag|%>
+      <option><%= tag.name %></option>
+    <%end%>
+  </select>
+  <input type="submit" value="Find!">
+ </form>
+
+
+
+
+</div>
